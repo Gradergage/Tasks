@@ -87,7 +87,8 @@ public class Main {
                     "WHERE (e.GROUP_ID=1 OR e.GROUP_ID=2) "+
                     "AND e.EMPLOYEE_ID=co.ENTITY_ID "+
                     "AND co.FLOOR_ID=f.FLOOR_ID "+
-                    "AND f.OFFICE_ID=o.OFFICE_ID");
+                    "AND f.OFFICE_ID=o.OFFICE_ID " +
+                    "GROUP BY o.OFFICE_NAME, f.FLOOR_NAME");
             while (rs.next()) {
                 System.out.println(rs.getString(1)+" "+ rs.getString(2));
             }
