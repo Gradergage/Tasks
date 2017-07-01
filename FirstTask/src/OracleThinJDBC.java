@@ -2,24 +2,25 @@ import oracle.jdbc.OracleConnection;
 import java.sql.*;
 import java.util.Properties;
 
-public class jdbc_oracle {
+public class OracleThinJDBC {
     private OracleConnection connection = null;
     private String driver = null;  // jdbc Driver
     private String url = null;  // Connection url
     private Properties properties = null;
 
 
-    public jdbc_oracle() {
-        driver="oracle.jdbc.OracleDriver";
+    public OracleThinJDBC() {
+        driver = "oracle.jdbc.OracleDriver";
     }
 
     // Driver registration
-    private void RegisterDriverManager() {
+    private void registerDriverManager() {
         try {
             Class.forName(driver).newInstance();
-        } catch (InstantiationException e) {e.printStackTrace();
-        } catch (IllegalAccessException e) {e.printStackTrace();
-        } catch (ClassNotFoundException e) {e.printStackTrace();}
+        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
     }
 
 
@@ -33,16 +34,16 @@ public class jdbc_oracle {
     }
 
     // Connection using URL
-    public void Connect(String login, String password) {
+    public void connect(String login, String password) {
 
-        RegisterDriverManager(); // Driver registration
+        registerDriverManager(); // Driver registration
 
         // Setting connection parameters
         properties = new Properties();
-        properties.setProperty("password"         , password);
-        properties.setProperty("user"             , login   );
-        properties.setProperty("useUnicode"       , "true"  );
-        properties.setProperty("characterEncoding", "utf8"  );
+        properties.setProperty("password", password);
+        properties.setProperty("user", login);
+        properties.setProperty("useUnicode", "true");
+        properties.setProperty("characterEncoding", "utf8");
         try {
             connection = (OracleConnection) DriverManager.getConnection(url, properties);
         } catch (SQLException e) {
@@ -50,10 +51,13 @@ public class jdbc_oracle {
         }
     }
 
-    public void Disconnect (Connection connection) {
+    public void disconnect(Connection connection) {
         try {
             connection.close();
             connection = null;
-        } catch (SQLException e) {}
-    };
+        } catch (SQLException e) {
+        }
+    }
+
+    ;
 }
