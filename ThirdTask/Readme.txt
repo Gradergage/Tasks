@@ -3,3 +3,4 @@
 - Drop the .war file to the %TOMCAT_HOME%/webapps/
 - Run the server %TOMCAT_HOME%/bin/startup.bat
 - Access to the site by URL http://localhost:8080/ThirdTaskCRUD/
+- Replace server.xml file in the folder %TOMCAT_HOME%/conf
