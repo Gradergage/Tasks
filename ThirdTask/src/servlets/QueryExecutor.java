@@ -56,7 +56,4 @@ public class QueryExecutor extends HttpServlet {
 			out.println(e1);
 		}
 	}
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	}
 }
