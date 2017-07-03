@@ -1,0 +1,5 @@
+- To deploy use Apache Tomcat 9: http://tomcat.apache.org/download-90.cgi
+- Not forget to define path JRE_HOME and JAVA_HOME constants
+- Drop the .war file to the %TOMCAT_HOME%/webapps/
+- Run the server %TOMCAT_HOME%/bin/startup.bat
+- Access to the site by URL http://localhost:8080/ThirdTaskCRUD/

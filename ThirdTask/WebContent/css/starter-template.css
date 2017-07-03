@@ -1,0 +1,14 @@
+.contentMain {
+	padding-top: 20px;
+}
+.navbar-inverse {
+    background-color: #222;
+    border-color: #222;
+}
+.navbar-inverse .navbar-brand {
+    color: #eaeaea;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
