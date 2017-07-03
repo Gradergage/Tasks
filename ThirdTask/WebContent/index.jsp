@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
 	<jsp:directive.page language="java"
-		contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8" />
+		contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" />
 	<jsp:text>
 		<![CDATA[ <?xml version="1.0" encoding="ISO-8859-1" ?> ]]>
 	</jsp:text>
@@ -10,7 +10,7 @@
 	</jsp:text>
 	<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Practice Database Administration</title>
 <link href="./css/bootstrap.min.css" rel="stylesheet" />
 <link href="./css/starter-template.css" rel="stylesheet" />
@@ -35,7 +35,8 @@
 
 				<div class="modal-body">
 					<form id="queryForm">
-						<input type="text" class="form-control" id="queryField" />
+						<input type="text" class="form-control" id="queryField"
+							name="query" />
 					</form>
 				</div>
 
@@ -58,7 +59,7 @@
 	</div>
 	<div class="container-fluid" id="contentMain">
 		<div class="row">
-			<div class="col-sm-3 col-md-2 sidebar">
+			<div class="col-sm-3 col-md-2 sidebar" id="sidepanel">
 				<ul class="nav nav-sidebar">
 					<li><a href="#" id="createButton">Create</a></li>
 					<li><a href="#">Delete</a></li>
@@ -67,24 +68,7 @@
 			</div>
 			<h3 class="sub-header" id="secTitle">Content table</h3>
 			<div class="table-responsive">
-				<table class="table table-striped" id="contentTable">
-					<thead>
-						<tr>
-							<th>1'st param</th>
-							<th>2'nd param</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>1</td>
-							<td>2</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>4</td>
-						</tr>
-					</tbody>
-				</table>
+				<table class="table table-striped" id="contentTable"></table>
 			</div>
 		</div>
 	</div>

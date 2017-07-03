@@ -19,15 +19,15 @@ public class QueryExecutor extends HttpServlet {
 	public QueryExecutor() {
 		super();
 	}
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		OracleThinJDBC dbc = new OracleThinJDBC();
 		dbc.setURL("Server.dpat.in", "ORCL", 1521);
 		dbc.connect("practice", "practice123");
 		Connection conn = dbc.getConnection();
 
-		String query = (String) request.getAttribute("query");
-		
+		String query = (String) request.getParameter("query");
+
 		PrintWriter out = response.getWriter();
 		ResultSet rs;
 		try {
@@ -53,12 +53,10 @@ public class QueryExecutor extends HttpServlet {
 			out.println("</table>");
 
 		} catch (SQLException e1) {
-			e1.printStackTrace();
+			out.println(e1);
 		}
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
 }
